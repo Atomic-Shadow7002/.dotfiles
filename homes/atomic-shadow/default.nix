@@ -20,8 +20,10 @@
     (pkgs.bottles.override {
       removeWarningPopup = true;
     })
-    pkgs.gnumake
+    pkgs.ani-cli
     pkgs.blender
+    pkgs.tree
+    pkgs.gnumake
     pkgs.scrcpy
     pkgs.flutter332
     pkgs.android-studio

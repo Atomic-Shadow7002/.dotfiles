@@ -30,13 +30,40 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.extraModprobeConfig = "options kvm_intel nested=1";
-  boot.kernelPackages = pkgs.linuxPackages_6_16;
+  boot.kernelPackages = pkgs.linuxPackages_6_17;
 
   # Zram stuff.
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 100;
+  };
+
+  # Disk swapfile
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8 * 1024;
+    }
+  ];
+
+  # systemd OOMD
+  systemd.oomd = {
+    enable = true;
+    enableRootSlice = true;
+    enableUserSlices = true;
+  };
+
+  # amd_pstate (CPU scaling)
+  boot.kernelParams = [
+    "amd_pstate=active"
+    "iommu=pt"
+    "idle=nomwait"
+  ];
 
   # Fine-grained localization stuff.
   time.timeZone = "Asia/Kolkata";
+
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IN";
@@ -76,8 +103,8 @@
   vm.enable = true;
   vm.kvm.enable = true;
   # vm.waydroid.enable = true;
-  virtualisation.vmware.host.enable = true;
-  virtualisation.vmware.guest.enable = true;
+  virtualisation.vmware.host.enable = false;
+  virtualisation.vmware.guest.enable = false;
 
   # Sunshine (and Moonlight) stuff.
   sunshine.enable = true;

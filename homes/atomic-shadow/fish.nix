@@ -75,6 +75,9 @@
         end
         nom shell $pkgs --command fish
       '';
+      treep = ''
+        tree -L 4 -d -I "node_modules|dist|build|coverage|.git|.next|target"
+      '';
     };
   };
 }
