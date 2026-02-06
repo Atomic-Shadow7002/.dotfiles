@@ -198,5 +198,5 @@ default_layout "compact"
 // copy_clipboard "primary"
 // copy_on_select false
 // mirror_session true
-// layout_dir "/home/debarchito/.config/zellij/layouts"
-theme_dir "/home/debarchito/.config/zellij/themes"
+// layout_dir "/home/atomic-shadow/.config/zellij/layouts"
+theme_dir "/home/atomic-shadow/.config/zellij/themes"

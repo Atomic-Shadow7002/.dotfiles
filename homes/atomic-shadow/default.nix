@@ -77,12 +77,17 @@
     pkgs.wl-clipboard
     pkgs.youtube-music
     pkgs.yaml-language-server
+    pkgs.vesktop
+    pkgs.wl-clipboard
+    pkgs.wl-mirror
+    pkgs.pear-desktop
     pkgs.zathura
     pkgs.zed-editor-fhs
     pkgs.ngrok
     pkgs.sunshine
     # fonts
     pkgs.maple-mono.NF
+    pkgs.noto-fonts-cjk-sans
   ];
 
   # Fontconfig stuff.
@@ -96,9 +101,6 @@
     allowUnfree = true;
     android_sdk.accept_license = true;
   };
-  # Catppuccin!
-  catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
 
   # Modules.
   imports = [
@@ -121,6 +123,7 @@
     ./zellij.nix
     ./zoxide.nix
     ./cursor.nix
+    ./niri.nix
   ];
 
 }

@@ -2,9 +2,9 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = "Abhishek Kumar Ray";
-    userEmail = "atomic7002@gmail.com";
-    extraConfig = {
+    settings = {
+      user.name = "Abhishek Kumar Ray";
+      user.email = "atomic7002@gmail.com";
       init.defaultBranch = "main";
       url = {
         "git@github.com:".insteadOf = "gh:";

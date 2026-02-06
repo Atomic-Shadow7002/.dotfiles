@@ -9,8 +9,9 @@
   options.android.enable = lib.mkEnableOption "enable android module";
 
   config = lib.mkIf config.android.enable {
-    programs.adb.enable = true;
-    services.udev.packages = [
+    # adb / fastboot are now provided via packages
+    environment.systemPackages = with pkgs; [
+      android-tools
     ];
   };
 }

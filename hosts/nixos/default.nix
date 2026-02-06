@@ -23,6 +23,12 @@
     android_sdk.accept_license = true;
   };
 
+  boot.tmp.cleanOnBoot = true;
+
+  services.btrfs.autoScrub.enable = true;
+  services.btrfs.autoScrub.fileSystems = [ "/" ];
+  services.btrfs.autoScrub.interval = "weekly";
+
   # Firmware stuff.
   services.fwupd.enable = true;
 
@@ -30,7 +36,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.extraModprobeConfig = "options kvm_intel nested=1";
-  boot.kernelPackages = pkgs.linuxPackages_6_17;
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # Zram stuff.
   zramSwap = {
@@ -91,9 +97,6 @@
   # Media stuff.
   bluetooth.enable = true;
   pipewire.enable = true;
-
-  # Display Manager stuff.
-  services.displayManager.ly.enable = true;
 
   # Graphics
   graphics.enable = true;
