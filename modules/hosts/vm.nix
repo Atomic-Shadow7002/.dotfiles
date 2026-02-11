@@ -13,18 +13,17 @@
   };
 
   config = lib.mkMerge [
+
     (lib.mkIf config.vm.enable {
       virtualisation.libvirtd = {
         enable = true;
+
         qemu = {
-          runAsRoot = true;
           swtpm.enable = true;
-          vhostUserPackages = [ pkgs.virtiofsd ];
         };
+
+        allowedBridges = [ ];
       };
-      programs.virt-manager.enable = true;
-      services.qemuGuest.enable = true;
-      services.spice-vdagentd.enable = true;
     })
 
     (lib.mkIf (config.vm.enable && config.vm.kvm.enable) {

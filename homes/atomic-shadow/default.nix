@@ -78,7 +78,7 @@
     pkgs.youtube-music
     pkgs.yaml-language-server
     pkgs.vesktop
-    pkgs.wl-clipboard
+    pkgs.matugen
     pkgs.wl-mirror
     pkgs.pear-desktop
     pkgs.zathura
@@ -122,8 +122,8 @@
     ./yazi.nix
     ./zellij.nix
     ./zoxide.nix
-    ./cursor.nix
     ./niri.nix
+    ./matugen.nix
   ];
 
 }

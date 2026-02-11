@@ -3,7 +3,16 @@
     enable = true;
     enableFishIntegration = false;
   };
-  xdg.configFile."zellij/config.kdl".source = ./zellij/config.kdl;
-  xdg.configFile."zellij/themes/catppuccin.kdl".source = ./zellij/themes/catppuccin.kdl;
-  xdg.configFile."zellij/themes/catppuccin.yaml".source = ./zellij/themes/catppuccin.yaml;
+
+  xdg.configFile."zellij/config.kdl".text = ''
+    theme "dankcolors"
+
+    default_layout "default"
+
+    pane_frames true
+    simplified_ui false
+
+    copy_on_select false
+    scroll_buffer_size 10000
+  '';
 }

@@ -12,6 +12,7 @@ in
     enable = true;
     defaultEditor = true;
     settings = {
+      theme = "dankcolors";
       editor = {
         bufferline = "multiple";
         color-modes = true;
