@@ -27,6 +27,7 @@
     pkgs.scrcpy
     pkgs.flutter332
     pkgs.android-studio
+    pkgs.maven
     pkgs.gradle
     pkgs.brave
     pkgs.vscode
@@ -75,7 +76,6 @@
     pkgs.unrar
     pkgs.vscode-langservers-extracted
     pkgs.wl-clipboard
-    pkgs.youtube-music
     pkgs.yaml-language-server
     pkgs.vesktop
     pkgs.matugen
@@ -116,7 +116,6 @@
     ./helix.nix
     ./jujutsu.nix
     ./kdeconnect.nix
-    ./librewolf.nix
     ./obs-studio.nix
     ./starship.nix
     ./yazi.nix

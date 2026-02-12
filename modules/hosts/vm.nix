@@ -24,6 +24,9 @@
 
         allowedBridges = [ ];
       };
+      environment.systemPackages = with pkgs; [
+        virt-manager
+      ];
     })
 
     (lib.mkIf (config.vm.enable && config.vm.kvm.enable) {
