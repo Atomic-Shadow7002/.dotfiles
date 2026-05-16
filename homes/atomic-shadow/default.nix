@@ -17,9 +17,9 @@
     pkgs.antigravity
     pkgs.bibata-cursors
     pkgs.blender
-    (pkgs.bottles.override {
-      removeWarningPopup = true;
-    })
+    #(pkgs.bottles.override {
+    #  removeWarningPopup = true;
+    # })
     pkgs.brave
     pkgs.codebook
     pkgs.dbeaver-bin
@@ -47,7 +47,6 @@
     pkgs.lsof
     pkgs.maple-mono.NF
     pkgs.markdown-oxide
-    pkgs.matugen
     pkgs.maven
     pkgs.mpv
     pkgs.ngrok
@@ -57,13 +56,15 @@
     pkgs.nixd
     pkgs.nixfmt
     pkgs.noto-fonts-cjk-sans
+    pkgs.nodejs
     pkgs.nvd
     pkgs.openjdk21
+    pkgs.papirus-folders
     pkgs.pear-desktop
     pkgs.podman-compose
     pkgs.postman
     (pkgs.prismlauncher.override {
-      jdks = [ pkgs.jdk21 ];
+      jdks = [ pkgs.jdk25 ];
     })
     pkgs.quickemu
     pkgs.ripgrep
@@ -122,6 +123,5 @@
     ./zoxide.nix
     ./niri.nix
     ./matugen.nix
-    ./gtk.nix
   ];
 }

@@ -28,6 +28,8 @@
   services.btrfs.autoScrub.enable = true;
   services.btrfs.autoScrub.fileSystems = [ "/" ];
   services.btrfs.autoScrub.interval = "weekly";
+  services.gvfs.enable = true;
+  services.gvfs.package = pkgs.gnome.gvfs;
 
   # Firmware stuff.
   services.fwupd.enable = true;
@@ -36,7 +38,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.extraModprobeConfig = "options kvm_intel nested=1";
-  boot.kernelPackages = pkgs.linuxPackages_6_20;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Zram stuff.
   zramSwap = {
