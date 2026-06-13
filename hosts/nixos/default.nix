@@ -34,6 +34,13 @@
   # Firmware stuff.
   services.fwupd.enable = true;
 
+  # Laptop lid config.
+  services.logind = {
+    lidSwitch = "ignore";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+  };
+
   # Fine-grained boot stuff.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
